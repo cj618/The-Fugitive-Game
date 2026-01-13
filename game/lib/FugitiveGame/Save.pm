@@ -5,6 +5,7 @@ use JSON::PP;
 use File::Spec;
 use File::Temp qw(tempfile);
 use FugitiveGame::Util qw(timestamp build_path);
+use FugitiveGame::State;
 
 sub save_state {
     my ($state, $dir) = @_;
@@ -27,16 +28,40 @@ sub load_state {
     local $/;
     my $json = <$fh>;
     close $fh;
-    return JSON::PP->new->decode($json);
+    my $state = JSON::PP->new->decode($json);
+    FugitiveGame::State::migrate($state);
+    FugitiveGame::State::clamp_state($state);
+    return $state;
 }
 
 sub list_saves {
     my ($dir) = @_;
     opendir my $dh, $dir or return [];
-    my @files = grep { /\.json$/ } readdir $dh;
+    my @files = grep { /\.json$/ && $_ ne 'progress.json' } readdir $dh;
     closedir $dh;
     @files = sort { (stat(build_path($dir, $b)))[9] <=> (stat(build_path($dir, $a)))[9] } @files;
     return [map { build_path($dir, $_) } @files];
+}
+
+sub save_progress {
+    my ($progress, $dir) = @_;
+    my $path = build_path($dir, 'progress.json');
+    my $json = JSON::PP->new->canonical->pretty->encode($progress);
+    open my $fh, '>', $path or die "Failed to write progress: $!";
+    print {$fh} $json;
+    close $fh;
+    return $path;
+}
+
+sub load_progress {
+    my ($dir) = @_;
+    my $path = build_path($dir, 'progress.json');
+    return { unlocked_chapter_mode => 0 } unless -e $path;
+    open my $fh, '<', $path or return { unlocked_chapter_mode => 0 };
+    local $/;
+    my $json = <$fh>;
+    close $fh;
+    return JSON::PP->new->decode($json);
 }
 
 1;

@@ -4,13 +4,22 @@ use warnings;
 use FugitiveGame::Util qw(clamp rng_int log_line);
 use FugitiveGame::State;
 use FugitiveGame::UI;
+use FugitiveGame::Phones;
+use FugitiveGame::Patterns;
+use FugitiveGame::Relationships;
 
 sub valid_actions {
-    my ($state, $actions) = @_;
+    my ($state, $actions, $content) = @_;
     my $slot = $state->{player}{slot};
+    my %npc_lookup = map { $_->{id} => $_ } @{$content->{npcs} || []};
     my @valid;
     for my $action (@{$actions || []}) {
         next unless grep { $_ eq $slot } @{$action->{valid_slots}};
+        if (my $npc_id = $action->{npc_id}) {
+            my $npc = $npc_lookup{$npc_id};
+            next if $npc && $npc->{historical};
+            next unless FugitiveGame::Relationships::is_available($state, $npc_id);
+        }
         if (my $req = $action->{requirements}) {
             if (my $flag = $req->{flag}) {
                 next unless $state->{player}{flags}{$flag};
@@ -39,6 +48,12 @@ sub resolve_action {
     $skill_bonus = clamp($skill_bonus, 0, 25);
     my $effective_risk = clamp($risk - $skill_bonus, 0, 100);
 
+    if ($action->{phone_action}) {
+        $effective_risk += FugitiveGame::Phones::risk_modifier($state, $action);
+    }
+    $effective_risk += FugitiveGame::Patterns::risk_modifier($state, $action->{id}, $location->{id}, $state->{player}{slot});
+    $effective_risk = clamp($effective_risk, 0, 100);
+
     my $roll = rng_int($state, 1, 100);
 
     my $outcome;
@@ -56,9 +71,16 @@ sub resolve_action {
     if ($action->{category} && $action->{category} eq 'move' && $action->{move_to}) {
         $state->{player}{location_id} = $action->{move_to};
     }
+    if ($action->{phone_action}) {
+        FugitiveGame::Phones::update_after_call($state, $location->{id}, $state->{player}{slot});
+    }
+    if (my $npc_id = $action->{npc_id}) {
+        FugitiveGame::Relationships::record_contact($state, $npc_id, $outcome);
+    }
+    FugitiveGame::Patterns::update_after_action($state, $action->{id}, $location->{id}, $state->{player}{slot});
 
     my $effect_summary = _summarize_effects($outcome_def->{effects} || {});
-    log_line($state, "Action: $action->{id} roll=$roll risk=$effective_risk outcome=$outcome effects={$effect_summary}");
+    log_line($state, "Action: $action->{id} act=$state->{story}{act} chapter=$state->{story}{chapter_id} roll=$roll risk=$effective_risk outcome=$outcome effects={$effect_summary}");
 
     return {
         outcome => $outcome,

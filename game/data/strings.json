@@ -3,5 +3,23 @@
   "save_success": "Game saved.",
   "load_none": "No saves found.",
   "quit_confirm": "Quit to menu?",
-  "status_label": "Status"
+  "status_label": "Status",
+  "tech_texture": {
+    "telephony": [
+      "Dial tone lingers longer than it should.",
+      "The keypad is worn down by too many stories."
+    ],
+    "payphone": [
+      "The coin return rattles with old metal.",
+      "The handset is slick with cheap plastic."
+    ],
+    "modem_unix": [
+      "A prompt flashes like a heartbeat in the dark.",
+      "Packet logs read like a faint map."
+    ],
+    "investigative": [
+      "Case files thicken in a back office.",
+      "A fax hums in the corner, pushing paper forward."
+    ]
+  }
 }

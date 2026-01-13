@@ -2,50 +2,151 @@
   {
     "id": "press_mentions",
     "name": "Press Mentions",
-    "trigger": { "day": 2 },
-    "effects": { "meters": { "reputation_media": 5, "law_pressure": 3 } },
-    "narration": "A brief mention surfaces in a column. The tone is more myth than fact, but it sticks."
+    "trigger": {
+      "day": 2
+    },
+    "effects": {
+      "meters": {
+        "reputation_media": 5,
+        "law_pressure": 3
+      }
+    },
+    "narration": "A brief mention surfaces in a column. The tone is more myth than fact, but it sticks.",
+    "chapter_ref": "opening_moves",
+    "historical_anchor": "early pursuit beat",
+    "tone_tags": [
+      "media"
+    ],
+    "agency_effects": {
+      "media": {
+        "pressure": 3
+      }
+    }
   },
   {
     "id": "probation_friction",
     "name": "Probation Friction",
-    "trigger": { "meter": { "stress": 25 } },
-    "effects": { "meters": { "stress": 5, "law_pressure": 4 } },
-    "narration": "A missed check-in becomes a quiet point of friction. The paperwork moves."
+    "trigger": {
+      "meter": {
+        "stress": 25
+      }
+    },
+    "effects": {
+      "meters": {
+        "stress": 5,
+        "law_pressure": 4
+      }
+    },
+    "narration": "A missed check-in becomes a quiet point of friction. The paperwork moves.",
+    "chapter_ref": "paper_trail",
+    "historical_anchor": "early pursuit beat",
+    "tone_tags": [
+      "tracking"
+    ],
+    "agency_effects": {
+      "prosecutors": {
+        "pressure": 3
+      }
+    }
   },
   {
     "id": "industry_whispers",
     "name": "Industry Whispers",
-    "trigger": { "meter": { "reputation_underground": 30 } },
-    "effects": { "meters": { "reputation_media": 3, "law_pressure": 2 } },
-    "narration": "Talk on the inside lines grows louder. Someone repeats your name with a question mark."
+    "trigger": {
+      "meter": {
+        "reputation_underground": 30
+      }
+    },
+    "effects": {
+      "meters": {
+        "reputation_media": 3,
+        "law_pressure": 2
+      }
+    },
+    "narration": "Talk on the inside lines grows louder. Someone repeats your name with a question mark.",
+    "chapter_ref": "opening_moves",
+    "historical_anchor": "early pursuit beat",
+    "tone_tags": [
+      "tracking"
+    ]
   },
   {
     "id": "investigator_interest",
     "name": "Investigator Interest",
-    "trigger": { "meter": { "law_pressure": 35 } },
-    "effects": { "meters": { "law_pressure": 6, "stress": 4 } },
-    "narration": "Investigators compare notes. A pattern starts to form in their files."
+    "trigger": {
+      "meter": {
+        "law_pressure": 35
+      }
+    },
+    "effects": {
+      "meters": {
+        "law_pressure": 6,
+        "stress": 4
+      }
+    },
+    "narration": "Investigators compare notes. A pattern starts to form in their files.",
+    "chapter_ref": "paper_trail",
+    "historical_anchor": "early pursuit beat",
+    "tone_tags": [
+      "tracking"
+    ]
   },
   {
     "id": "press_narrative",
     "name": "Press Narrative",
-    "trigger": { "meter": { "reputation_media": 20 } },
-    "effects": { "meters": { "reputation_media": 5, "stress": 3 } },
-    "narration": "The narrative sharpens. You are described more than explained."
+    "trigger": {
+      "meter": {
+        "reputation_media": 20
+      }
+    },
+    "effects": {
+      "meters": {
+        "reputation_media": 5,
+        "stress": 3
+      }
+    },
+    "narration": "The narrative sharpens. You are described more than explained.",
+    "chapter_ref": "opening_moves",
+    "historical_anchor": "early pursuit beat",
+    "tone_tags": [
+      "media"
+    ]
   },
   {
     "id": "contact_leak",
     "name": "Contact Leak",
-    "trigger": { "flag": "npc_contacted" },
-    "effects": { "meters": { "law_pressure": 5 } },
-    "narration": "A casual mention travels further than expected. Your circle has edges."
+    "trigger": {
+      "flag": "npc_contacted"
+    },
+    "effects": {
+      "meters": {
+        "law_pressure": 5
+      }
+    },
+    "narration": "A casual mention travels further than expected. Your circle has edges.",
+    "chapter_ref": "paper_trail",
+    "historical_anchor": "early pursuit beat",
+    "tone_tags": [
+      "tracking"
+    ]
   },
   {
     "id": "media_momentum",
     "name": "Media Momentum",
-    "trigger": { "day": 5 },
-    "effects": { "meters": { "reputation_media": 4, "law_pressure": 4 } },
-    "narration": "Coverage builds on itself. The story becomes a placeholder for larger anxieties."
+    "trigger": {
+      "day": 5
+    },
+    "effects": {
+      "meters": {
+        "reputation_media": 4,
+        "law_pressure": 4
+      }
+    },
+    "narration": "Coverage builds on itself. The story becomes a placeholder for larger anxieties.",
+    "chapter_ref": "opening_moves",
+    "historical_anchor": "early pursuit beat",
+    "tone_tags": [
+      "tracking"
+    ]
   }
 ]

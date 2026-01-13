@@ -2,6 +2,7 @@ package FugitiveGame::Events;
 use strict;
 use warnings;
 use FugitiveGame::Actions;
+use FugitiveGame::Agency;
 
 sub check_events {
     my ($state, $events) = @_;
@@ -11,6 +12,9 @@ sub check_events {
         next if $state->{player}{flags}{"event_$id"};
         next unless _trigger_met($state, $event->{trigger});
         FugitiveGame::Actions::apply_effects($state, $event->{effects} || {});
+        if ($event->{agency_effects}) {
+            FugitiveGame::Agency::apply_effects($state, $event->{agency_effects});
+        }
         $state->{player}{flags}{"event_$id"} = 1;
         push @triggered, $event;
     }

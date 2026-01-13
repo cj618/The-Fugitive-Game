@@ -1,0 +1,22 @@
+[
+  {
+    "id": "safehouse_thin",
+    "name": "Safehouse Thins",
+    "chapter_ref": "logistics_scrape",
+    "historical_anchor": "fragile shelters",
+    "tone_tags": ["tracking"],
+    "trigger": {"day": 6},
+    "effects": {"meters": {"safehouse_stability": -8, "stress": 4}},
+    "narration": "The place you lean on feels less solid than before."
+  },
+  {
+    "id": "equipment_decay",
+    "name": "Equipment Decay",
+    "chapter_ref": "thin_safehouses",
+    "historical_anchor": "gear wears down",
+    "tone_tags": ["tracking"],
+    "trigger": {"meter": {"sleep_debt": 25}},
+    "effects": {"meters": {"equipment_integrity": -10, "stress": 3}},
+    "narration": "Your kit starts to show the cost of rushing." 
+  }
+]

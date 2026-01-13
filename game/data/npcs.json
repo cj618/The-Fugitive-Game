@@ -4,20 +4,35 @@
     "name": "Journalist Contact",
     "base_trust": 15,
     "base_risk": 20,
-    "description": "A reporter circling the story, hungry for credible detail."
+    "description": "A reporter circling the story, hungry for credible detail.",
+    "historical": false,
+    "interaction_mode": "direct"
   },
   {
     "id": "phreak_friend",
     "name": "Old Phreak Friend",
     "base_trust": 25,
     "base_risk": 25,
-    "description": "A trusted voice from the scene, but loose talk can echo."
+    "description": "A trusted voice from the scene, but loose talk can echo.",
+    "historical": false,
+    "interaction_mode": "direct"
   },
   {
     "id": "industry_insider",
     "name": "Industry Insider",
     "base_trust": 10,
     "base_risk": 30,
-    "description": "An inside line to systems knowledge with a sharp price."
+    "description": "An inside line to systems knowledge with a sharp price.",
+    "historical": false,
+    "interaction_mode": "direct"
+  },
+  {
+    "id": "historical_investigator",
+    "name": "Security Researcher",
+    "base_trust": 0,
+    "base_risk": 0,
+    "description": "A distant figure whose analysis shifts the tone of pursuit.",
+    "historical": true,
+    "interaction_mode": "indirect"
   }
 ]
