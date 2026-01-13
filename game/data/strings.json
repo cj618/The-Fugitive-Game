@@ -1,0 +1,7 @@
+{
+  "menu_invalid": "Invalid choice.",
+  "save_success": "Game saved.",
+  "load_none": "No saves found.",
+  "quit_confirm": "Quit to menu?",
+  "status_label": "Status"
+}

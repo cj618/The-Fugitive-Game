@@ -1,0 +1,23 @@
+[
+  {
+    "id": "journalist_contact",
+    "name": "Journalist Contact",
+    "base_trust": 15,
+    "base_risk": 20,
+    "description": "A reporter circling the story, hungry for credible detail."
+  },
+  {
+    "id": "phreak_friend",
+    "name": "Old Phreak Friend",
+    "base_trust": 25,
+    "base_risk": 25,
+    "description": "A trusted voice from the scene, but loose talk can echo."
+  },
+  {
+    "id": "industry_insider",
+    "name": "Industry Insider",
+    "base_trust": 10,
+    "base_risk": 30,
+    "description": "An inside line to systems knowledge with a sharp price."
+  }
+]
