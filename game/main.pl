@@ -1,3 +1,15 @@
+#!/usr/bin/perl
+
+#
+# Copyright (c) 2026, C Jervis - chrisxjervis@gmail.com
+#
+# Licensing information, see: LICENSE file for details.
+#
+#
+# EARLY DEVELOPMENT VERSION
+#
+#
+
 use strict;
 use warnings;
 use FindBin;
