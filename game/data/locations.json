@@ -1,0 +1,42 @@
+[
+  {
+    "id": "apartment",
+    "name": "Apartment",
+    "risk_modifier": 0,
+    "connectivity": 2,
+    "anonymity": 2,
+    "text": "Your base line. Familiar walls, limited movement, but not invisible."
+  },
+  {
+    "id": "payphone_row",
+    "name": "Payphone Row",
+    "risk_modifier": 15,
+    "connectivity": 5,
+    "anonymity": 2,
+    "text": "A line of payphones with a pulse of traffic and a chorus of ringing."
+  },
+  {
+    "id": "library",
+    "name": "Library",
+    "risk_modifier": -5,
+    "connectivity": 3,
+    "anonymity": 4,
+    "text": "Quiet stacks, public terminals, and a rhythm of strangers."
+  },
+  {
+    "id": "motel",
+    "name": "Motel",
+    "risk_modifier": 8,
+    "connectivity": 2,
+    "anonymity": 3,
+    "text": "Anonymous rooms and thin walls."
+  },
+  {
+    "id": "friends_place",
+    "name": "Friend's Place",
+    "risk_modifier": -2,
+    "connectivity": 2,
+    "anonymity": 3,
+    "text": "A couch and a known face, but trust has a cost."
+  }
+]
