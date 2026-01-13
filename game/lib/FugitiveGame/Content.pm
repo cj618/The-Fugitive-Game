@@ -48,7 +48,7 @@ sub _validate_historical_npcs {
     for my $action (@{$content->{actions} || []}) {
         my $npc_id = $action->{npc_id};
         next unless $npc_id && $historical{$npc_id};
-        die \"Historical NPC $npc_id cannot be directly interactable\\n\" if ($historical{$npc_id}{interaction_mode} || '') eq 'indirect';
+        die "Historical NPC $npc_id cannot be directly interactable\n" if ($historical{$npc_id}{interaction_mode} || '') eq 'indirect';
     }
 }
 
@@ -56,8 +56,8 @@ sub _validate_event_fields {
     my ($content) = @_;
     for my $act (keys %{$content->{events_by_act} || {}}) {
         for my $event (@{$content->{events_by_act}{$act} || []}) {
-            die \"Event $event->{id} missing chapter_ref\\n\" unless $event->{chapter_ref};
-            die \"Event $event->{id} missing historical_anchor\\n\" unless $event->{historical_anchor};
+            die "Event $event->{id} missing chapter_ref\n" unless $event->{chapter_ref};
+            die "Event $event->{id} missing historical_anchor\n" unless $event->{historical_anchor};
         }
     }
 }
