@@ -1,0 +1,14 @@
+{
+  "calm": {
+    "description": "Measured, observational, light tech texture."
+  },
+  "wired": {
+    "description": "Short bursts, clipped clarity, more technical detail."
+  },
+  "paranoid": {
+    "description": "Fragmented, scanning for threats, jittery."
+  },
+  "detached": {
+    "description": "Distant, clinical, emotionally blunted."
+  }
+}

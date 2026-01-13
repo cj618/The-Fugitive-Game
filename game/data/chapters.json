@@ -1,0 +1,12 @@
+[
+  {"chapter_id":"opening_moves","act":1,"title":"Opening Moves","day_range_hint":"1-2","tags":["phones","intermediaries"],"narration_intro":"A first set of calls and quiet moves takes shape."},
+  {"chapter_id":"paper_trail","act":1,"title":"Paper Trail","day_range_hint":"2-3","tags":["media","tracking"],"narration_intro":"Records start to echo beyond your control."},
+  {"chapter_id":"probation_clampdown","act":2,"title":"Probation Clampdown","day_range_hint":"3-5","tags":["probation"],"narration_intro":"Rules tighten and time windows close."},
+  {"chapter_id":"fraying_edges","act":2,"title":"Fraying Edges","day_range_hint":"5-6","tags":["media","phones"],"narration_intro":"The story outpaces you and your margins thin."},
+  {"chapter_id":"logistics_scrape","act":3,"title":"Logistics Scrape","day_range_hint":"6-8","tags":["tracking","phones"],"narration_intro":"Every step wears something down."},
+  {"chapter_id":"thin_safehouses","act":3,"title":"Thin Safehouses","day_range_hint":"8-9","tags":["tracking"],"narration_intro":"Shelter turns into another moving part."},
+  {"chapter_id":"convergence","act":4,"title":"Convergence","day_range_hint":"9-11","tags":["media","tracking"],"narration_intro":"Signals align and the pursuit hardens."},
+  {"chapter_id":"legal_lock","act":4,"title":"Legal Lock","day_range_hint":"10-11","tags":["media"],"narration_intro":"The narrative collapses into a charge."},
+  {"chapter_id":"final_run","act":5,"title":"Final Run","day_range_hint":"11-12","tags":["tracking","phones"],"narration_intro":"You stretch the last margins of escape."},
+  {"chapter_id":"capture","act":5,"title":"Capture","day_range_hint":"12","tags":["media"],"narration_intro":"The run ends under fluorescent light."}
+]

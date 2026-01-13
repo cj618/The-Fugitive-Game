@@ -1,0 +1,23 @@
+[
+  {
+    "id": "probation_notice",
+    "name": "Probation Notice",
+    "chapter_ref": "probation_clampdown",
+    "historical_anchor": "probation pressure builds",
+    "tone_tags": ["probation"],
+    "trigger": {"day": 3},
+    "effects": {"meters": {"compliance": -5, "stress": 4, "law_pressure": 3}},
+    "agency_effects": {"prosecutors": {"pressure": 4}},
+    "narration": "A formal notice arrives by proxy. The margins for mistakes shrink."
+  },
+  {
+    "id": "employer_fear",
+    "name": "Employer Fear",
+    "chapter_ref": "fraying_edges",
+    "historical_anchor": "workplace fear of exposure",
+    "tone_tags": ["media"],
+    "trigger": {"meter": {"law_pressure": 30}},
+    "effects": {"meters": {"resources": -5, "stress": 3}},
+    "narration": "A quiet employer warning lands. The work dries up." 
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "media_crescendo",
+    "name": "Media Crescendo",
+    "chapter_ref": "convergence",
+    "historical_anchor": "media myth hardens",
+    "tone_tags": ["media"],
+    "trigger": {"meter": {"reputation_media": 25}},
+    "effects": {"meters": {"stress": 4, "law_pressure": 6}},
+    "agency_effects": {"media": {"pressure": 6}},
+    "narration": "The press story coheres into a simpler, harsher shape." 
+  },
+  {
+    "id": "legal_thread",
+    "name": "Legal Thread",
+    "chapter_ref": "legal_lock",
+    "historical_anchor": "prosecutorial framing",
+    "tone_tags": ["media"],
+    "trigger": {"meter": {"law_pressure": 55}},
+    "effects": {"meters": {"stress": 3, "law_pressure": 4}},
+    "agency_effects": {"prosecutors": {"pressure": 6}},
+    "narration": "A prosecutorial frame starts to set."
+  }
+]

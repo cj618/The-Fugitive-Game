@@ -1,0 +1,18 @@
+[
+  {
+    "scenario_id": "chapter_probation",
+    "title": "Chapter Mode: Probation Clampdown",
+    "chapter_id": "probation_clampdown",
+    "act": 2,
+    "starting_state_overrides": {
+      "player": {
+        "day": 3,
+        "slot": "morning",
+        "location_id": "apartment",
+        "meters": {"compliance": 45, "stress": 25, "law_pressure": 25}
+      }
+    },
+    "victory_condition": "Survive 2 days without identity burn",
+    "end_condition": "Day 5 or law pressure 80"
+  }
+]

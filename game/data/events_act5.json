@@ -1,0 +1,23 @@
+[
+  {
+    "id": "final_friction",
+    "name": "Final Friction",
+    "chapter_ref": "final_run",
+    "historical_anchor": "logistics fail",
+    "tone_tags": ["tracking"],
+    "trigger": {"meter": {"equipment_integrity": 40}},
+    "effects": {"meters": {"stress": 5, "law_pressure": 6}},
+    "narration": "The last leg is full of friction. You lose time to basics." 
+  },
+  {
+    "id": "closing_net",
+    "name": "Closing Net",
+    "chapter_ref": "capture",
+    "historical_anchor": "net tightens",
+    "tone_tags": ["media"],
+    "trigger": {"meter": {"law_pressure": 75}},
+    "effects": {"meters": {"stress": 6, "law_pressure": 8}},
+    "agency_effects": {"fbi": {"pressure": 8}},
+    "narration": "The net closes in increments."
+  }
+]

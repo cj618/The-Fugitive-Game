@@ -3,65 +3,155 @@
     "id": "social_call_low",
     "name": "Social Engineering Call (Low)",
     "category": "social",
-    "valid_slots": ["morning", "afternoon", "night"],
+    "valid_slots": [
+      "morning",
+      "afternoon",
+      "night"
+    ],
     "base_risk": 30,
-    "skill_weights": { "social_engineering": 3, "telephony": 2 },
+    "skill_weights": {
+      "social_engineering": 3,
+      "telephony": 2
+    },
     "outcomes": {
       "success": {
         "text": "A low-pressure call lands. You pick up a small piece of useful context.",
-        "effects": { "meters": { "reputation_underground": 4, "stress": -2 }, "daily_exposure": 1 }
+        "effects": {
+          "meters": {
+            "reputation_underground": 4,
+            "stress": -2
+          },
+          "daily_exposure": 1
+        }
       },
       "partial": {
         "text": "The call is awkward but you still get a hint of what you need.",
-        "effects": { "meters": { "reputation_underground": 2, "stress": 1 }, "daily_exposure": 2 }
+        "effects": {
+          "meters": {
+            "reputation_underground": 2,
+            "stress": 1
+          },
+          "daily_exposure": 2
+        }
       },
       "exposure": {
         "text": "The line feels hot. You hear a click, then nothing.",
-        "effects": { "meters": { "law_pressure": 6, "stress": 4 }, "daily_exposure": 3 }
+        "effects": {
+          "meters": {
+            "law_pressure": 6,
+            "stress": 4
+          },
+          "daily_exposure": 3
+        }
       }
-    }
+    },
+    "phone_action": true,
+    "payphone_required": false,
+    "routing_heat_delta": 5,
+    "reuse_penalty": 2,
+    "timing_sensitivity": "med",
+    "tone_tags": [
+      "phones",
+      "unix"
+    ]
   },
   {
     "id": "social_call_high",
     "name": "Social Engineering Call (High)",
     "category": "social",
-    "valid_slots": ["morning", "afternoon", "night"],
+    "valid_slots": [
+      "morning",
+      "afternoon",
+      "night"
+    ],
     "base_risk": 55,
-    "skill_weights": { "social_engineering": 4, "telephony": 2 },
+    "skill_weights": {
+      "social_engineering": 4,
+      "telephony": 2
+    },
     "outcomes": {
       "success": {
         "text": "You press hard and it works. The line yields.",
-        "effects": { "meters": { "reputation_underground": 7, "stress": 2 }, "daily_exposure": 2, "daily_high_risk": 1 }
+        "effects": {
+          "meters": {
+            "reputation_underground": 7,
+            "stress": 2
+          },
+          "daily_exposure": 2,
+          "daily_high_risk": 1
+        }
       },
       "partial": {
         "text": "You get something, but it costs you composure.",
-        "effects": { "meters": { "reputation_underground": 3, "stress": 5 }, "daily_exposure": 3, "daily_high_risk": 1 }
+        "effects": {
+          "meters": {
+            "reputation_underground": 3,
+            "stress": 5
+          },
+          "daily_exposure": 3,
+          "daily_high_risk": 1
+        }
       },
       "exposure": {
         "text": "The call goes loud. Someone is listening.",
-        "effects": { "meters": { "law_pressure": 10, "stress": 6 }, "daily_exposure": 4, "daily_high_risk": 1 }
+        "effects": {
+          "meters": {
+            "law_pressure": 10,
+            "stress": 6
+          },
+          "daily_exposure": 4,
+          "daily_high_risk": 1
+        }
       }
-    }
+    },
+    "phone_action": true,
+    "payphone_required": false,
+    "routing_heat_delta": 5,
+    "reuse_penalty": 2,
+    "timing_sensitivity": "high",
+    "tone_tags": [
+      "phones"
+    ]
   },
   {
     "id": "research_library",
     "name": "Research in Library",
     "category": "research",
-    "valid_slots": ["morning", "afternoon"],
+    "valid_slots": [
+      "morning",
+      "afternoon"
+    ],
     "base_risk": 20,
-    "skill_weights": { "unix_systems": 2 },
+    "skill_weights": {
+      "unix_systems": 2
+    },
     "outcomes": {
       "success": {
         "text": "Quiet work yields patterns and references.",
-        "effects": { "meters": { "reputation_underground": 3, "stress": -1 } }
+        "effects": {
+          "meters": {
+            "reputation_underground": 3,
+            "stress": -1
+          }
+        }
       },
       "partial": {
         "text": "You find a lead but it is incomplete.",
-        "effects": { "meters": { "reputation_underground": 1, "stress": 1 } }
+        "effects": {
+          "meters": {
+            "reputation_underground": 1,
+            "stress": 1
+          }
+        }
       },
       "exposure": {
         "text": "Someone notices your focus and the questions you ask.",
-        "effects": { "meters": { "law_pressure": 4, "stress": 3 } }
+        "effects": {
+          "meters": {
+            "law_pressure": 4,
+            "stress": 3
+          }
+        }
       }
     }
   },
@@ -69,43 +159,100 @@
     "id": "use_payphone",
     "name": "Use Payphone",
     "category": "telephony",
-    "valid_slots": ["morning", "afternoon", "night"],
+    "valid_slots": [
+      "morning",
+      "afternoon",
+      "night"
+    ],
     "base_risk": 40,
-    "skill_weights": { "telephony": 3 },
+    "skill_weights": {
+      "telephony": 3
+    },
     "outcomes": {
       "success": {
         "text": "The payphone line is clean and you get through.",
-        "effects": { "meters": { "reputation_underground": 4 }, "daily_exposure": 2, "daily_payphone": 1 }
+        "effects": {
+          "meters": {
+            "reputation_underground": 4
+          },
+          "daily_exposure": 2,
+          "daily_payphone": 1
+        }
       },
       "partial": {
         "text": "The call connects, but you rush it.",
-        "effects": { "meters": { "reputation_underground": 2, "stress": 2 }, "daily_exposure": 3, "daily_payphone": 1 }
+        "effects": {
+          "meters": {
+            "reputation_underground": 2,
+            "stress": 2
+          },
+          "daily_exposure": 3,
+          "daily_payphone": 1
+        }
       },
       "exposure": {
         "text": "The payphone feels compromised. You cut it short.",
-        "effects": { "meters": { "law_pressure": 8, "stress": 4 }, "daily_exposure": 4, "daily_payphone": 1 }
+        "effects": {
+          "meters": {
+            "law_pressure": 8,
+            "stress": 4
+          },
+          "daily_exposure": 4,
+          "daily_payphone": 1
+        }
       }
-    }
+    },
+    "phone_action": true,
+    "payphone_required": true,
+    "routing_heat_delta": 5,
+    "reuse_penalty": 2,
+    "timing_sensitivity": "high",
+    "tone_tags": [
+      "phones"
+    ]
   },
   {
     "id": "move_location",
     "name": "Move Location",
     "category": "move",
-    "valid_slots": ["morning", "afternoon"],
+    "valid_slots": [
+      "morning",
+      "afternoon"
+    ],
     "base_risk": 25,
-    "skill_weights": { "tradecraft": 2 },
+    "skill_weights": {
+      "tradecraft": 2
+    },
     "outcomes": {
       "success": {
         "text": "You move without drawing attention.",
-        "effects": { "meters": { "stress": -1 }, "daily_travel": 1 }
+        "effects": {
+          "meters": {
+            "stress": -1
+          },
+          "daily_travel": 1
+        }
       },
       "partial": {
         "text": "The move is clean, but you feel watched.",
-        "effects": { "meters": { "stress": 1 }, "daily_travel": 1, "daily_exposure": 1 }
+        "effects": {
+          "meters": {
+            "stress": 1
+          },
+          "daily_travel": 1,
+          "daily_exposure": 1
+        }
       },
       "exposure": {
         "text": "A sloppy transition leaves a trace.",
-        "effects": { "meters": { "law_pressure": 6, "stress": 3 }, "daily_travel": 1, "daily_exposure": 2 }
+        "effects": {
+          "meters": {
+            "law_pressure": 6,
+            "stress": 3
+          },
+          "daily_travel": 1,
+          "daily_exposure": 2
+        }
       }
     }
   },
@@ -113,109 +260,296 @@
     "id": "lie_low",
     "name": "Lie Low",
     "category": "recovery",
-    "valid_slots": ["morning", "afternoon", "night"],
+    "valid_slots": [
+      "morning",
+      "afternoon",
+      "night"
+    ],
     "base_risk": 5,
-    "skill_weights": { "tradecraft": 1 },
+    "skill_weights": {
+      "tradecraft": 1
+    },
     "outcomes": {
       "success": {
         "text": "You stay quiet and let the day pass.",
-        "effects": { "meters": { "stress": -4, "isolation": 2 } }
+        "effects": {
+          "meters": {
+            "stress": -4,
+            "isolation": 2
+          }
+        }
       },
       "partial": {
         "text": "You rest, but your mind keeps racing.",
-        "effects": { "meters": { "stress": -2, "isolation": 2 } }
+        "effects": {
+          "meters": {
+            "stress": -2,
+            "isolation": 2
+          }
+        }
       },
       "exposure": {
         "text": "Even quiet draws a glance when pressure is high.",
-        "effects": { "meters": { "law_pressure": 2, "stress": 1, "isolation": 2 } }
+        "effects": {
+          "meters": {
+            "law_pressure": 2,
+            "stress": 1,
+            "isolation": 2
+          }
+        }
       }
-    }
+    },
+    "tone_tags": [
+      "probation"
+    ]
   },
   {
     "id": "contact_journalist",
     "name": "Contact NPC: Journalist",
     "category": "social",
-    "valid_slots": ["afternoon", "night"],
+    "valid_slots": [
+      "afternoon",
+      "night"
+    ],
     "base_risk": 45,
-    "skill_weights": { "social_engineering": 2 },
+    "skill_weights": {
+      "social_engineering": 2
+    },
     "outcomes": {
       "success": {
         "text": "The journalist listens. Trust ticks up, but so does exposure.",
-        "effects": { "meters": { "reputation_media": 5 }, "npc": { "id": "journalist_contact", "trust": 4, "risk": 3 }, "flags": { "npc_contacted": 1 }, "daily_exposure": 2 }
+        "effects": {
+          "meters": {
+            "reputation_media": 5
+          },
+          "npc": {
+            "id": "journalist_contact",
+            "trust": 4,
+            "risk": 3
+          },
+          "flags": {
+            "npc_contacted": 1
+          },
+          "daily_exposure": 2
+        }
       },
       "partial": {
         "text": "You trade careful words. The relationship remains fragile.",
-        "effects": { "meters": { "reputation_media": 2 }, "npc": { "id": "journalist_contact", "trust": 2, "risk": 2 }, "flags": { "npc_contacted": 1 }, "daily_exposure": 2 }
+        "effects": {
+          "meters": {
+            "reputation_media": 2
+          },
+          "npc": {
+            "id": "journalist_contact",
+            "trust": 2,
+            "risk": 2
+          },
+          "flags": {
+            "npc_contacted": 1
+          },
+          "daily_exposure": 2
+        }
       },
       "exposure": {
         "text": "The call is too long and too direct.",
-        "effects": { "meters": { "law_pressure": 7, "stress": 4 }, "npc": { "id": "journalist_contact", "trust": -2, "risk": 4 }, "flags": { "npc_contacted": 1 }, "daily_exposure": 3 }
+        "effects": {
+          "meters": {
+            "law_pressure": 7,
+            "stress": 4
+          },
+          "npc": {
+            "id": "journalist_contact",
+            "trust": -2,
+            "risk": 4
+          },
+          "flags": {
+            "npc_contacted": 1
+          },
+          "daily_exposure": 3
+        }
       }
-    }
+    },
+    "phone_action": true,
+    "payphone_required": false,
+    "routing_heat_delta": 5,
+    "reuse_penalty": 2,
+    "timing_sensitivity": "med",
+    "tone_tags": [
+      "phones",
+      "media"
+    ],
+    "npc_id": "journalist_contact"
   },
   {
     "id": "contact_phreak",
     "name": "Contact NPC: Old Phreak Friend",
     "category": "social",
-    "valid_slots": ["afternoon", "night"],
+    "valid_slots": [
+      "afternoon",
+      "night"
+    ],
     "base_risk": 35,
-    "skill_weights": { "social_engineering": 1, "telephony": 1 },
+    "skill_weights": {
+      "social_engineering": 1,
+      "telephony": 1
+    },
     "outcomes": {
       "success": {
         "text": "A friendly voice steadies you. The network hums.",
-        "effects": { "meters": { "reputation_underground": 4, "stress": -2 }, "npc": { "id": "phreak_friend", "trust": 3, "risk": 2 }, "flags": { "npc_contacted": 1 }, "daily_exposure": 2 }
+        "effects": {
+          "meters": {
+            "reputation_underground": 4,
+            "stress": -2
+          },
+          "npc": {
+            "id": "phreak_friend",
+            "trust": 3,
+            "risk": 2
+          },
+          "flags": {
+            "npc_contacted": 1
+          },
+          "daily_exposure": 2
+        }
       },
       "partial": {
         "text": "You trade basics. It helps, but the line feels thin.",
-        "effects": { "meters": { "reputation_underground": 2, "stress": 1 }, "npc": { "id": "phreak_friend", "trust": 1, "risk": 2 }, "flags": { "npc_contacted": 1 }, "daily_exposure": 2 }
+        "effects": {
+          "meters": {
+            "reputation_underground": 2,
+            "stress": 1
+          },
+          "npc": {
+            "id": "phreak_friend",
+            "trust": 1,
+            "risk": 2
+          },
+          "flags": {
+            "npc_contacted": 1
+          },
+          "daily_exposure": 2
+        }
       },
       "exposure": {
         "text": "You hear a second voice on the line.",
-        "effects": { "meters": { "law_pressure": 6, "stress": 3 }, "npc": { "id": "phreak_friend", "trust": -2, "risk": 4 }, "flags": { "npc_contacted": 1 }, "daily_exposure": 3 }
+        "effects": {
+          "meters": {
+            "law_pressure": 6,
+            "stress": 3
+          },
+          "npc": {
+            "id": "phreak_friend",
+            "trust": -2,
+            "risk": 4
+          },
+          "flags": {
+            "npc_contacted": 1
+          },
+          "daily_exposure": 3
+        }
       }
-    }
+    },
+    "phone_action": true,
+    "payphone_required": false,
+    "routing_heat_delta": 5,
+    "reuse_penalty": 2,
+    "timing_sensitivity": "med",
+    "tone_tags": [
+      "phones"
+    ],
+    "npc_id": "phreak_friend"
   },
   {
     "id": "check_anomalies",
     "name": "Check Phone Line Anomalies",
     "category": "telephony",
-    "valid_slots": ["morning", "afternoon"],
+    "valid_slots": [
+      "morning",
+      "afternoon"
+    ],
     "base_risk": 30,
-    "skill_weights": { "telephony": 3 },
+    "skill_weights": {
+      "telephony": 3
+    },
     "outcomes": {
       "success": {
         "text": "You find a pattern in the noise and adjust your route.",
-        "effects": { "meters": { "law_pressure": -2, "stress": -1 } }
+        "effects": {
+          "meters": {
+            "law_pressure": -2,
+            "stress": -1
+          }
+        }
       },
       "partial": {
         "text": "The signal is muddy. You adjust, but not enough.",
-        "effects": { "meters": { "stress": 2 } }
+        "effects": {
+          "meters": {
+            "stress": 2
+          }
+        }
       },
       "exposure": {
         "text": "Your probing attracts attention.",
-        "effects": { "meters": { "law_pressure": 5, "stress": 3 } }
+        "effects": {
+          "meters": {
+            "law_pressure": 5,
+            "stress": 3
+          }
+        }
       }
-    }
+    },
+    "phone_action": true,
+    "payphone_required": false,
+    "routing_heat_delta": 5,
+    "reuse_penalty": 2,
+    "timing_sensitivity": "med",
+    "tone_tags": [
+      "phones",
+      "tracking"
+    ],
+    "check_signal": true
   },
   {
     "id": "cleanup",
     "name": "Clean Up / Reduce Exposure",
     "category": "tradecraft",
-    "valid_slots": ["morning", "afternoon", "night"],
+    "valid_slots": [
+      "morning",
+      "afternoon",
+      "night"
+    ],
     "base_risk": 15,
-    "skill_weights": { "tradecraft": 3 },
+    "skill_weights": {
+      "tradecraft": 3
+    },
     "outcomes": {
       "success": {
         "text": "You tighten routines and remove small traces.",
-        "effects": { "meters": { "law_pressure": -3, "stress": -2 } }
+        "effects": {
+          "meters": {
+            "law_pressure": -3,
+            "stress": -2
+          }
+        }
       },
       "partial": {
         "text": "You tidy up, but doubts linger.",
-        "effects": { "meters": { "law_pressure": -1, "stress": 1 } }
+        "effects": {
+          "meters": {
+            "law_pressure": -1,
+            "stress": 1
+          }
+        }
       },
       "exposure": {
         "text": "A cleanup move makes more noise than expected.",
-        "effects": { "meters": { "law_pressure": 4, "stress": 2 } }
+        "effects": {
+          "meters": {
+            "law_pressure": 4,
+            "stress": 2
+          }
+        }
       }
     }
   },
@@ -223,21 +557,52 @@
     "id": "acquire_identity",
     "name": "Acquire Burner Identity",
     "category": "tradecraft",
-    "valid_slots": ["morning", "afternoon"],
+    "valid_slots": [
+      "morning",
+      "afternoon"
+    ],
     "base_risk": 35,
-    "skill_weights": { "tradecraft": 2 },
+    "skill_weights": {
+      "tradecraft": 2
+    },
     "outcomes": {
       "success": {
         "text": "You secure a burner identity.",
-        "effects": { "meters": { "resources": -20 }, "add_identity": { "alias": "Burner ID", "quality": "low" }, "daily_exposure": 1 }
+        "effects": {
+          "meters": {
+            "resources": -20
+          },
+          "add_identity": {
+            "alias": "Burner ID",
+            "quality": "low"
+          },
+          "daily_exposure": 1
+        }
       },
       "partial": {
         "text": "You acquire a shaky identity at a higher cost.",
-        "effects": { "meters": { "resources": -30, "stress": 2 }, "add_identity": { "alias": "Burner ID", "quality": "low" }, "daily_exposure": 2 }
+        "effects": {
+          "meters": {
+            "resources": -30,
+            "stress": 2
+          },
+          "add_identity": {
+            "alias": "Burner ID",
+            "quality": "low"
+          },
+          "daily_exposure": 2
+        }
       },
       "exposure": {
         "text": "The attempt draws interest. You walk away empty-handed.",
-        "effects": { "meters": { "law_pressure": 6, "resources": -10, "stress": 3 }, "daily_exposure": 2 }
+        "effects": {
+          "meters": {
+            "law_pressure": 6,
+            "resources": -10,
+            "stress": 3
+          },
+          "daily_exposure": 2
+        }
       }
     }
   },
@@ -245,21 +610,42 @@
     "id": "legit_work",
     "name": "Attempt Legit Work",
     "category": "social",
-    "valid_slots": ["morning", "afternoon"],
+    "valid_slots": [
+      "morning",
+      "afternoon"
+    ],
     "base_risk": 25,
-    "skill_weights": { "social_engineering": 1 },
+    "skill_weights": {
+      "social_engineering": 1
+    },
     "outcomes": {
       "success": {
         "text": "You pull off a short shift and blend in.",
-        "effects": { "meters": { "resources": 8, "reputation_media": -1, "stress": 2 } }
+        "effects": {
+          "meters": {
+            "resources": 8,
+            "reputation_media": -1,
+            "stress": 2
+          }
+        }
       },
       "partial": {
         "text": "You earn a little but the attention feels sharp.",
-        "effects": { "meters": { "resources": 4, "stress": 3 } }
+        "effects": {
+          "meters": {
+            "resources": 4,
+            "stress": 3
+          }
+        }
       },
       "exposure": {
         "text": "Someone looks twice and you leave early.",
-        "effects": { "meters": { "law_pressure": 5, "stress": 4 } }
+        "effects": {
+          "meters": {
+            "law_pressure": 5,
+            "stress": 4
+          }
+        }
       }
     }
   },
@@ -267,21 +653,41 @@
     "id": "eat_sleep",
     "name": "Eat / Sleep",
     "category": "recovery",
-    "valid_slots": ["night"],
+    "valid_slots": [
+      "night"
+    ],
     "base_risk": 5,
-    "skill_weights": { "tradecraft": 1 },
+    "skill_weights": {
+      "tradecraft": 1
+    },
     "outcomes": {
       "success": {
         "text": "You rest enough to take the edge off.",
-        "effects": { "meters": { "stress": -5, "isolation": -1 } }
+        "effects": {
+          "meters": {
+            "stress": -5,
+            "isolation": -1,
+            "sleep_debt": -8
+          }
+        }
       },
       "partial": {
         "text": "Rest comes in shallow waves.",
-        "effects": { "meters": { "stress": -2 } }
+        "effects": {
+          "meters": {
+            "stress": -2,
+            "sleep_debt": -4
+          }
+        }
       },
       "exposure": {
         "text": "Noise outside keeps you alert and restless.",
-        "effects": { "meters": { "stress": 2 } }
+        "effects": {
+          "meters": {
+            "stress": 2,
+            "sleep_debt": -1
+          }
+        }
       }
     }
   },
@@ -289,21 +695,223 @@
     "id": "one_more_look",
     "name": "One More Look",
     "category": "temptation",
-    "valid_slots": ["night"],
+    "valid_slots": [
+      "night"
+    ],
     "base_risk": 60,
-    "skill_weights": { "unix_systems": 2, "tradecraft": 1 },
+    "skill_weights": {
+      "unix_systems": 2,
+      "tradecraft": 1
+    },
     "outcomes": {
       "success": {
         "text": "The temptation pays off with a rush of underground credibility.",
-        "effects": { "meters": { "reputation_underground": 8, "stress": 4 }, "daily_exposure": 3, "daily_high_risk": 1 }
+        "effects": {
+          "meters": {
+            "reputation_underground": 8,
+            "stress": 4
+          },
+          "daily_exposure": 3,
+          "daily_high_risk": 1
+        }
       },
       "partial": {
         "text": "You get a glimpse but it costs you sleep.",
-        "effects": { "meters": { "reputation_underground": 4, "stress": 5 }, "daily_exposure": 3, "daily_high_risk": 1 }
+        "effects": {
+          "meters": {
+            "reputation_underground": 4,
+            "stress": 5
+          },
+          "daily_exposure": 3,
+          "daily_high_risk": 1
+        }
       },
       "exposure": {
         "text": "It is too visible. You back out with your pulse racing.",
-        "effects": { "meters": { "law_pressure": 10, "stress": 6 }, "daily_exposure": 4, "daily_high_risk": 1 }
+        "effects": {
+          "meters": {
+            "law_pressure": 10,
+            "stress": 6
+          },
+          "daily_exposure": 4,
+          "daily_high_risk": 1
+        }
+      }
+    }
+  },
+  {
+    "id": "rest_properly",
+    "name": "Rest Properly",
+    "category": "recovery",
+    "valid_slots": [
+      "night"
+    ],
+    "base_risk": 8,
+    "skill_weights": {
+      "tradecraft": 1
+    },
+    "outcomes": {
+      "success": {
+        "text": "You get real sleep and reset your edge.",
+        "effects": {
+          "meters": {
+            "stress": -6,
+            "sleep_debt": -15,
+            "paranoia": -2
+          }
+        }
+      },
+      "partial": {
+        "text": "Sleep comes in chunks, still useful.",
+        "effects": {
+          "meters": {
+            "stress": -3,
+            "sleep_debt": -8
+          }
+        }
+      },
+      "exposure": {
+        "text": "Rest is interrupted and uneasy.",
+        "effects": {
+          "meters": {
+            "stress": 1,
+            "sleep_debt": -4
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "maintain_kit",
+    "name": "Maintain Kit",
+    "category": "tradecraft",
+    "valid_slots": [
+      "morning",
+      "afternoon"
+    ],
+    "base_risk": 20,
+    "skill_weights": {
+      "tradecraft": 2
+    },
+    "outcomes": {
+      "success": {
+        "text": "You clean, calibrate, and tighten your kit.",
+        "effects": {
+          "meters": {
+            "equipment_integrity": 12,
+            "stress": -1
+          }
+        }
+      },
+      "partial": {
+        "text": "You patch what you can with limited time.",
+        "effects": {
+          "meters": {
+            "equipment_integrity": 6
+          }
+        }
+      },
+      "exposure": {
+        "text": "The work draws unwanted attention.",
+        "effects": {
+          "meters": {
+            "law_pressure": 4,
+            "stress": 3
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "rotate_safehouse",
+    "name": "Rotate Safehouse",
+    "category": "move",
+    "valid_slots": [
+      "morning",
+      "afternoon"
+    ],
+    "base_risk": 30,
+    "skill_weights": {
+      "tradecraft": 2
+    },
+    "outcomes": {
+      "success": {
+        "text": "You change your routine and reset your footprint.",
+        "effects": {
+          "meters": {
+            "safehouse_stability": 12,
+            "stress": 1
+          },
+          "daily_travel": 1
+        }
+      },
+      "partial": {
+        "text": "You move, but the transition is rough.",
+        "effects": {
+          "meters": {
+            "safehouse_stability": 6,
+            "stress": 2
+          },
+          "daily_travel": 1
+        }
+      },
+      "exposure": {
+        "text": "The move leaves a trace you notice too late.",
+        "effects": {
+          "meters": {
+            "law_pressure": 6,
+            "stress": 3
+          },
+          "daily_travel": 1
+        }
+      }
+    }
+  },
+  {
+    "id": "report_probation",
+    "name": "Report Probation Window",
+    "category": "probation",
+    "valid_slots": [
+      "morning",
+      "afternoon"
+    ],
+    "base_risk": 15,
+    "skill_weights": {
+      "social_engineering": 1
+    },
+    "requirements": {
+      "min_meter": {
+        "compliance": 20
+      }
+    },
+    "outcomes": {
+      "success": {
+        "text": "You satisfy the reporting window without friction.",
+        "effects": {
+          "meters": {
+            "compliance": 8,
+            "stress": -1
+          }
+        }
+      },
+      "partial": {
+        "text": "The report is awkward but accepted.",
+        "effects": {
+          "meters": {
+            "compliance": 4,
+            "stress": 1
+          }
+        }
+      },
+      "exposure": {
+        "text": "Reporting draws a hard look.",
+        "effects": {
+          "meters": {
+            "law_pressure": 4,
+            "compliance": -4,
+            "stress": 3
+          }
+        }
       }
     }
   }

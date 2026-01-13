@@ -1,0 +1,7 @@
+[
+  {"id":"wire_1","act":1,"text":"Local telecom incident draws cautious interest.","tags":["technical_threat"]},
+  {"id":"wire_2","act":2,"text":"Probation terms tighten amid broader scrutiny.","tags":["demonization"]},
+  {"id":"wire_3","act":3,"text":"Anonymous sources hint at routing anomalies.","tags":["technical_threat"]},
+  {"id":"wire_4","act":4,"text":"Coverage turns mythic as agencies align.","tags":["myth"]},
+  {"id":"wire_5","act":5,"text":"Officials cite convergence in an ongoing investigation.","tags":["folk_devil"]}
+]

@@ -2,6 +2,8 @@ package FugitiveGame::Adversary;
 use strict;
 use warnings;
 use FugitiveGame::State;
+use FugitiveGame::Patterns;
+use FugitiveGame::Agency;
 
 sub escalate {
     my ($state) = @_;
@@ -13,6 +15,8 @@ sub escalate {
     $adversary->{pattern_knowledge} += int($meters->{law_pressure} / 25);
     $adversary->{resource_commitment} += int($meters->{reputation_media} / 30);
     $adversary->{technical_focus} += int($meters->{stress} / 30);
+
+    $adversary->{pattern_knowledge} += int(($state->{patterns}{repetition_score} || 0) / 15);
 
     $media->{momentum} += int($meters->{reputation_media} / 20);
     $media->{demonization} += int($meters->{reputation_media} / 30);
@@ -31,6 +35,7 @@ sub escalate {
     }
 
     $meters->{law_pressure} = int(($adversary->{awareness} + $adversary->{pattern_knowledge} + $media->{momentum}) / 3);
+    FugitiveGame::Agency::apply_slot($state);
 
     FugitiveGame::State::clamp_state($state);
 }
